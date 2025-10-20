@@ -15,31 +15,51 @@ fileInp.addEventListener("change" ,(event)=>{
     }
 });
  
+let cardGenerated = false;  
 
-form.addEventListener("submit" ,(eve)=>{
-    eve.preventDefault();
-    let div = document.createElement("div");
-    // div.innerHTML = "";
-div.classList.add("user-card");
+form.addEventListener("submit", (eve) => {
+  eve.preventDefault();
 
-let img = document.createElement("img");
-  img.src = "https://randomuser.me/api/portraits/men/32.jpg"; 
+  if (cardGenerated) {
+    alert("User card already generated.");
+    return;  
+  }
 
-div.appendChild(img);
-let h2 = document.createElement("div");
-h2.classList.add("user-name");
-h2.textContent = input[0].value
-div.appendChild(h2);
+  let div = document.createElement("div");
+  div.classList.add("user-card");
 
-let h3  = document.createElement("div");
-h3.classList.add("user-email");
-  h3.textContent = input[1].value
+  let img = document.createElement("img");
+  const file = input[3].files[0];
 
-div.appendChild(h3);
-let p = document.createElement("div"); 
-p.classList.add("user-number");
-  p.textContent = input[2].value
-div.appendChild(p);
-document.body.appendChild(div);
+  if (file && file.type.startsWith("image/")) {
+    const reader = new FileReader();
+    reader.onload = function(event) {
+      img.src = event.target.result;
+    };
+    reader.readAsDataURL(file);
+  } else {
+    alert("Please select a valid image file.");
+    return;
+  }
 
-})
+  div.appendChild(img);
+
+  let h2 = document.createElement("div");
+  h2.classList.add("user-name");
+  h2.textContent = input[0].value;
+  div.appendChild(h2);
+
+  let h3 = document.createElement("div");
+  h3.classList.add("user-email");
+  h3.textContent = input[1].value;
+  div.appendChild(h3);
+
+  let p = document.createElement("div");
+  p.classList.add("user-number");
+  p.textContent = input[2].value;
+  div.appendChild(p);
+
+  document.body.appendChild(div);
+
+  cardGenerated = true;  
+});
