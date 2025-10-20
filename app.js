@@ -14,4 +14,10 @@ fileInp.addEventListener("change" ,(event)=>{
         btn.textContent = file.name
     }
 });
+ 
 
+form.addEventListener("submit" ,(eve)=>{
+    eve.preventDefault();
+    let div = document.createElement("div");
+
+})
