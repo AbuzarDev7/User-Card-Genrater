@@ -117,11 +117,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background:#fffdfd;
+    height: 130vh;
+    background:#000;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     flex-direction: column;
+    gap: 40px;
   }
 
   /* Card */
@@ -220,3 +221,69 @@ body {
       background-position: 0% 50%;
     }
   }
+#btn{
+  overflow: hidden;
+}
+  #spline{
+    width: 40%;
+    margin-left: 60px;
+  }
+
+
+  /* Responsive for user card */
+@media (max-width: 480px) {
+  .user-card {
+    width: 90vw; 
+    padding: 20px 15px;
+  }
+
+  .user-card img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .user-name {
+    font-size: 22px;
+  }
+
+  .user-email {
+    font-size: 14px;
+  }
+
+  .user-number {
+    font-size: 16px;
+  }
+}
+
+
+  @media (max-width: 768px) {
+    .user-card {
+      width: 70vw;
+    }
+
+    .user-card img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .user-name {
+      font-size: 24px;
+    }
+  }
+  @media (max-width: 768px) {
+    #spline {
+      width: 100%;       
+      min-width: unset; 
+    }
+  }
+
+  @media (max-width: 480px) {
+    #spline {
+      width: 100%;      
+    }
+  }
+  @media (max-width: 480px) {
+  #spline {
+    margin-left: 10px; 
+  }
+}

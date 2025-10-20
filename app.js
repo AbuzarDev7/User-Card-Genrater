@@ -63,3 +63,5 @@ form.addEventListener("submit", (eve) => {
 
   cardGenerated = true;  
 });
+
+
