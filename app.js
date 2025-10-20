@@ -19,6 +19,7 @@ fileInp.addEventListener("change" ,(event)=>{
 form.addEventListener("submit" ,(eve)=>{
     eve.preventDefault();
     let div = document.createElement("div");
+    // div.innerHTML = "";
 div.classList.add("user-card");
 
 let img = document.createElement("img");
@@ -27,17 +28,17 @@ let img = document.createElement("img");
 div.appendChild(img);
 let h2 = document.createElement("div");
 h2.classList.add("user-name");
-h2.textContent = "John Doe"; // 
+h2.textContent = input[0].value
 div.appendChild(h2);
 
 let h3  = document.createElement("div");
 h3.classList.add("user-email");
-  h3.textContent = "john.doe@example.com";
+  h3.textContent = input[1].value
 
 div.appendChild(h3);
 let p = document.createElement("div"); 
 p.classList.add("user-number");
-  p.textContent = "+1 234 567 8901";
+  p.textContent = input[2].value
 div.appendChild(p);
 document.body.appendChild(div);
 
