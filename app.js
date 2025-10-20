@@ -9,6 +9,9 @@ fileInp.click();
 })
 
 fileInp.addEventListener("change" ,(event)=>{
-    console.log(event.target.files );
-console.log("change file");
-})
+    const file = event.target.files[0]
+    if(file){
+        btn.textContent = file.name
+    }
+});
+
