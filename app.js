@@ -19,12 +19,11 @@ let cardGenerated = false;
 form.addEventListener("submit", (eve) => {
   eve.preventDefault();
 
-  // Get input values
   const nameValue = inputs[0]?.value.trim();
   const emailValue = inputs[1]?.value.trim();
   const numberValue = inputs[2]?.value.trim();
 
-  // Validate inputs
+
   if (!nameValue) {
     alert("Please enter your name.");
     return;
@@ -49,11 +48,11 @@ form.addEventListener("submit", (eve) => {
     return;
   }
 
-  // Create card container
+
   let div = document.createElement("div");
   div.classList.add("user-card");
 
-  // Create and handle image
+  
   let img = document.createElement("img");
   img.alt = "User Image";
   
@@ -61,16 +60,15 @@ form.addEventListener("submit", (eve) => {
   reader.onload = function(event) {
     img.src = event.target.result;
     
-    // Once image is loaded, append all elements
+
     div.appendChild(img);
 
-    // Create name element
     let nameDiv = document.createElement("div");
     nameDiv.classList.add("user-name");
     nameDiv.textContent = nameValue;
     div.appendChild(nameDiv);
 
-    // Create email element
+    
     let emailDiv = document.createElement("div");
     emailDiv.classList.add("user-email");
     emailDiv.textContent = emailValue;
@@ -82,7 +80,7 @@ form.addEventListener("submit", (eve) => {
     numberDiv.textContent = numberValue;
     div.appendChild(numberDiv);
 
-    // Append card to body
+
     document.body.appendChild(div);
     cardGenerated = true;
   };
