@@ -10,7 +10,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 150vh;
 }
 
 form#form {
@@ -91,11 +91,7 @@ form#form button[type="submit"]:hover {
 
 
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 html{
     font-size: 62.5%;
 }
@@ -117,7 +113,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 130vh;
+    height: 160vh;
     background:#000;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -137,6 +133,8 @@ body {
     color: #fff;
     position: relative;
     overflow: hidden;
+    
+  
 
     /* Animate in from bottom */
     transform: translateY(40px);
